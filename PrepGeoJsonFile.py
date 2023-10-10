@@ -27,4 +27,8 @@ def filter_nyc_data(filepath):
 
 if __name__ == "__main__":
     # Load and filter data
-    filtered_data = filter_nyc_data('Clean Brooklyn Streetlines.geojson')
+    filtered_data = filter_nyc_data('NYC Street Centerline (CSCL).geojson')
+    
+    # Save the filtered data as a geojson file
+    output_filepath = "Clean Brooklyn Streetlines.geojson"
+    filtered_data.to_file(output_filepath, driver='GeoJSON')
